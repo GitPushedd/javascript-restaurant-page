@@ -17,6 +17,7 @@ module.exports = {
   plugins: [
     new HTMLWebpackPlugin({
       template: "./src/template.html",
+      favicon: "./src/imgs/sushiLogo.png",
     }),
   ],
   module: {
