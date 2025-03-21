@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+:root {
+  --rojo-sakura: #e54b4b;
+  --blanco-arroz: #f7ebe8;
+  --negro-tinta: #1e1e24;
+  --gris-oscuro: #444140;
+  --rosa-salmon: #ffa987;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--rosa-salmon);
+}
+
+/* Estilos generales */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Kaushan Script", cursive;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1vh 2vw;
+  background: var(--rojo-sakura);
+}
+
+.logo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: clamp(1.6rem, 8vw, 2rem);
+  font-weight: 900;
+  color: var(--blanco-arroz);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.06);
+}
+
+/* Contenedor de botones */
+.nav-botones {
+  display: flex;
+  gap: 1.2vw;
+  flex-wrap: wrap;
+}
+
+/* Botones de navegación */
+.nav-botones button {
+  position: relative;
+  background: none;
+  border: none;
+  padding: 3px 0.4vw;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--blanco-arroz);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+}
+
+.nav-botones button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 8px;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 10"><path d="M 0 5 Q 10 0, 20 5 T 40 5 T 60 5 T 80 5 T 100 5 T 120 5 T 140 5 T 160 5 T 180 5 T 200 5" stroke="white" fill="transparent" stroke-width="2"/></svg>');
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-botones button:hover::after {
+  width: 100%;
+}
+
+#container {
+  background-color: #ffa987;
+  flex: 1;
+}
