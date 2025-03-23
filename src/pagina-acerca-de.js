@@ -1,35 +1,67 @@
-import wavesimg from "./imgs/waves-acercade.png";
+import img from "./imgs/acercade.jpg";
 
 function dibujar(contenedor) {
   contenedor.innerHTML = "";
-  const divPrincipal = document.createElement("div");
-  divPrincipal.classList.add("principal");
-  const divIzquierda = document.createElement("div");
-  divIzquierda.classList.add("izquierda");
-  const divDerecha = document.createElement("div");
-  divDerecha.classList.add("derecha");
 
+  const divPrincipal = document.createElement("div");
+  divPrincipal.classList.add("contenedor-acercade");
+
+  const divContenedor = document.createElement("div");
+  divContenedor.classList.add("contenedor-acercade-interior");
+
+  const divIzquierda = document.createElement("div");
+  divIzquierda.classList.add("contenedor-acercade-izquierda");
+  const divDerecha = document.createElement("div");
+  divDerecha.classList.add("contenedor-acercade-derecha");
+
+  //Div derecho
   const titulo = document.createElement("h2");
-  titulo.textContent = "¿Quiénes somos?";
+  titulo.textContent = "Nuestra Historia";
   const parrafo = document.createElement("p");
   parrafo.textContent =
-    "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+    "Todo comenzó con una simple idea: crear un espacio donde la innovación y la creatividad se encuentren para transformar la experiencia digital. Desde nuestros primeros días, hemos trabajado incansablemente para diseñar soluciones únicas que conecten a las personas y hagan la tecnología más accesible para todos.";
+
+  const mision = document.createElement("h2");
+  mision.textContent = "Nuestra Misión";
+  const parrafomision = document.createElement("p");
+  parrafomision.textContent =
+    "Crear experiencias digitales intuitivas y memorables, brindando herramientas que simplifiquen la vida de las personas. Creemos en la tecnología como un medio para conectar, inspirar y mejorar el mundo que nos rodea.";
+
+  const nuestrosValores = document.createElement("h2");
+  nuestrosValores.textContent = "Nuestros Valores";
+  const listaValores = document.createElement("ul");
+  const innovacionValor = document.createElement("li");
+  innovacionValor.innerHTML =
+    "<span>Innovación: </span> Siempre buscamos nuevas formas de hacer las cosas, desafiando los límites de la creatividad y la tecnología.";
+  const transparenciaValor = document.createElement("li");
+  transparenciaValor.innerHTML =
+    "<span>Transparencia: </span> Valoramos la honestidad y la claridad en todas nuestras interacciones.";
+  const compromisoValor = document.createElement("li");
+  compromisoValor.innerHTML =
+    "<span>Compromiso: </span> Nos dedicamos a cumplir nuestras promesas y superar las expectativas de nuestros clientes.";
+  const experienciaValor = document.createElement("li");
+  experienciaValor.innerHTML =
+    "<span>Experiencia: </span> Nos esforzamos por ofrecer experiencias memorables y significativas a través de nuestros productos y servicios.";
+
+  listaValores.appendChild(innovacionValor);
+  listaValores.appendChild(transparenciaValor);
+  listaValores.appendChild(compromisoValor);
+  listaValores.appendChild(experienciaValor);
+  //Div izquierdo
   const imagen = document.createElement("img");
-  imagen.src = wavesimg;
+  imagen.src = img;
 
-  const imagenwaves = document.createElement("img");
-  imagenwaves.src = wavesimg;
-  imagenwaves.classList.add("waves");
-  imagenwaves.alt = "waves";
-
-  divIzquierda.appendChild(titulo);
-  divIzquierda.appendChild(parrafo);
-  divDerecha.appendChild(imagen);
-  divPrincipal.appendChild(divIzquierda);
-  divPrincipal.appendChild(divDerecha);
-
+  divIzquierda.appendChild(imagen);
+  divDerecha.appendChild(titulo);
+  divDerecha.appendChild(parrafo);
+  divDerecha.appendChild(mision);
+  divDerecha.appendChild(parrafomision);
+  divDerecha.appendChild(nuestrosValores);
+  divDerecha.appendChild(listaValores);
+  divContenedor.appendChild(divIzquierda);
+  divContenedor.appendChild(divDerecha);
+  divPrincipal.appendChild(divContenedor);
   contenedor.appendChild(divPrincipal);
-  contenedor.appendChild(imagenwaves);
 }
 
 export default dibujar;
