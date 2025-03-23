@@ -235,6 +235,13 @@ nav::before {
   color: var(--negro-tinta);
   font-weight: 800;
   text-align: center;
+  background-color: var(--blanco-arroz);
+  width: 100%;
+  position: relative;
+  top: 14px; /* Ajusta este valor según sea necesario */
+  padding: 1ch 0 0.6ch;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
 }
 
 .contenedor-menu {
@@ -245,10 +252,8 @@ nav::before {
   gap: 2.5ch;
   width: 100%;
   background-color: var(--blanco-arroz);
-  padding: 2.5ch;
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 2.5ch 2.5ch 6ch;
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 5vh;
 }
 
@@ -326,6 +331,91 @@ nav::before {
   opacity: 1;
   z-index: 0;
   filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.2));
+}
+
+.contenedor-contacto {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor-contacto-interno {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2vw;
+  padding: 3vh 2vw;
+  border: none;
+  flex-wrap: wrap;
+  background-color: var(--blanco-arroz);
+  position: relative;
+  max-width: 100%;
+}
+
+.contenedor-contacto-interno::before {
+  content: "";
+  position: absolute;
+  bottom: -19px; /* Ajusta la posición si es necesario */
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 6"><path d="M 0 3 Q 5 1, 10 3 T 20 3 T 30 3 T 40 3 T 50 3 T 60 3 T 70 3 T 80 3 T 90 3 T 100 3 T 110 3 T 120 3 T 130 3 T 140 3 T 150 3 T 160 3 T 170 3 T 180 3 T 190 3 T 200 3" stroke="%23f7ebe8" fill="transparent" stroke-width="2" stroke-linecap="round"/></svg>');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 1;
+  z-index: 0;
+  filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.2));
+}
+
+.contenedor-contacto-interno::after {
+  content: "";
+  position: absolute;
+  top: -20px; /* Ajusta la posición si es necesario */
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 6"><path d="M 0 3 Q 5 1, 10 3 T 20 3 T 30 3 T 40 3 T 50 3 T 60 3 T 70 3 T 80 3 T 90 3 T 100 3 T 110 3 T 120 3 T 130 3 T 140 3 T 150 3 T 160 3 T 170 3 T 180 3 T 190 3 T 200 3" stroke="%23f7ebe8" fill="transparent" stroke-width="2" stroke-linecap="round"/></svg>');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 1;
+  z-index: 0;
+}
+
+.contacto-div-izquierdo {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+.contacto-div-izquierdo h2 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  color: var(--negro-tinta);
+  font-weight: 800;
+  margin-bottom: auto;
+}
+
+.contacto-div-izquierdo p:not(:last-of-type) {
+  line-height: 1.8;
+  color: var(--gris-oscuro);
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+}
+
+.contacto-div-izquierdo p:last-of-type {
+  margin-top: auto;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-weight: 700;
+}
+
+iframe {
+  flex: 1;
+  min-width: 200px;
+  border: none;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
 @media (max-width: 900px) {

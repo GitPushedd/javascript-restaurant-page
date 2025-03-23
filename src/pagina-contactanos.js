@@ -2,22 +2,28 @@ function dibujar(contenedor) {
   contenedor.innerHTML = "";
 
   const contenedorContacto = document.createElement("div");
-  contenedorContacto.setAttribute("class", "contacto-div");
+  contenedorContacto.setAttribute("class", "contenedor-contacto");
+
+  const contenedorInterior = document.createElement("div");
+  contenedorInterior.setAttribute("class", "contenedor-contacto-interno");
+
+  const contenedorizquierdo = document.createElement("div");
+  contenedorizquierdo.setAttribute("class", "contacto-div-izquierdo");
 
   const titulo = document.createElement("h2");
   titulo.textContent = "Nuestra ubicación";
 
   const direccion = document.createElement("p");
-  direccion.textContent = "Calle Falsa 123, Ciudad Ejemplo";
+  direccion.textContent = "Cl. 14 Sur # 14-23, Bogotá, Colombia";
 
   const telefono = document.createElement("p");
-  telefono.textContent = "Teléfono: 123-456-7890";
+  telefono.textContent = "Teléfono: 3182194645";
 
   const horario = document.createElement("p");
-  horario.textContent = "Horario: Lunes a Viernes, 9am - 5pm";
+  horario.textContent = "Horario: Lunes a Viernes, 7am - 5pm";
 
   const escribenos = document.createElement("p");
-  escribenos.textContent = "Escríbenos";
+  escribenos.textContent = "Escríbenos...";
 
   const mapa = document.createElement("iframe");
   mapa.setAttribute(
@@ -31,12 +37,14 @@ function dibujar(contenedor) {
   mapa.setAttribute("loading", "lazy");
   mapa.setAttribute("referrerpolicy", "no-referrer-when-downgrade");
 
-  contenedorContacto.appendChild(titulo);
-  contenedorContacto.appendChild(direccion);
-  contenedorContacto.appendChild(telefono);
-  contenedorContacto.appendChild(horario);
-  contenedorContacto.appendChild(escribenos);
-  contenedorContacto.appendChild(mapa);
+  contenedorizquierdo.appendChild(titulo);
+  contenedorizquierdo.appendChild(direccion);
+  contenedorizquierdo.appendChild(telefono);
+  contenedorizquierdo.appendChild(horario);
+  contenedorizquierdo.appendChild(escribenos);
+  contenedorInterior.appendChild(contenedorizquierdo);
+  contenedorInterior.appendChild(mapa);
+  contenedorContacto.appendChild(contenedorInterior);
   contenedor.appendChild(contenedorContacto);
 }
 
